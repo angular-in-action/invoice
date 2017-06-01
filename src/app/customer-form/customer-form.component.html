@@ -1,0 +1,23 @@
+<div *tdLoading="'customer'">
+  <form *ngIf="customer">
+    <md-card>
+      <md-card-header>Edit Customer</md-card-header>
+      <md-card-content>
+        <md-input-container>
+          <input name="customer" mdInput placeholder="Customer Name" value="">
+        </md-input-container>
+        <md-input-container>
+          <input name="email" mdInput type="email" placeholder="Email" value="">
+        </md-input-container>
+        <md-input-container>
+          <input name="phone" mdInput type="tel" placeholder="Phone" value="">
+        </md-input-container>
+      </md-card-content>
+      <md-card-actions>
+        <button type="button" md-button>Delete</button>
+        <button type="button" md-button>Cancel</button>
+        <button type="submit" md-raised-button color="primary">Save</button>
+      </md-card-actions>
+    </md-card>
+  </form>
+</div>

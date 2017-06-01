@@ -1,0 +1,11 @@
+<div *tdLoading="'customers'">
+  <md-list *ngIf="customers">
+    <h3 md-subheader>Customers</h3>
+    <md-list-item *ngFor="let customer of customers" routerLink="/customers/{{customer.id}}">
+      <md-icon md-list-icon>note</md-icon>
+      <h4 md-line>{{customer.name}}</h4>
+      <p md-line> {{customer.email}} </p>
+    </md-list-item>
+  </md-list>
+  <button md-fab class="mat-fab-bottom-right fixed mat-accent mat-fab" routerLink="/customers/create"><md-icon>add</md-icon></button>
+</div>

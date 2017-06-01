@@ -1,0 +1,38 @@
+<div  *tdLoading="'invoice'">
+  <md-list *ngIf="invoice && customer">
+    <h3 md-subheader>Invoice ID: {{invoice.id}}</h3>
+    <md-list-item>
+      <md-icon md-list-icon *ngIf="invoice.paid">done</md-icon>
+      <md-icon md-list-icon *ngIf="!invoice.paid">clear</md-icon>
+      <h4 md-line *ngIf="invoice.paid">Payment Received</h4>
+      <h4 md-line *ngIf="!invoice.paid">Outstanding</h4>
+      <p md-line>Payment Status</p>
+    </md-list-item>
+    <md-list-item>
+      <md-icon md-list-icon>done</md-icon>
+      <h4 md-line>{{invoice.service}}</h4>
+      <p md-line>Service</p>
+    </md-list-item>
+    <md-list-item>
+      <md-icon md-list-icon>date_range</md-icon>
+      <h4 md-line>{{invoice.date | date}}</h4>
+      <p md-line>Date</p>
+    </md-list-item>
+    <md-list-item>
+      <md-icon md-list-icon>schedule</md-icon>
+      <h4 md-line>{{invoice.hours}} hours at {{invoice.rate | currency:'USD':true:'.0'}}</h4>
+      <p md-line>Hours and Rate</p>
+    </md-list-item>
+    <md-list-item>
+      <md-icon md-list-icon>attach_money</md-icon>
+      <h4 md-line>{{invoice.hours * invoice.rate | currency:'USD':true:'.0'}}</h4>
+      <p md-line>Total Invoiced</p>
+    </md-list-item>
+    <md-list-item>
+      <md-icon md-list-icon>perm_identity</md-icon>
+      <h4 md-line>{{customer.name}}</h4>
+      <p md-line>Customer</p>
+    </md-list-item>
+  </md-list>
+  <button md-fab class="mat-fab-bottom-right fixed mat-accent mat-fab" routerLink="/invoices/{{invoice?.id}}/edit"><md-icon>mode_edit</md-icon></button>
+</div>

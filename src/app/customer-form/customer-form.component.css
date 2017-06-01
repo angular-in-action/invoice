@@ -1,0 +1,7 @@
+:host {
+  padding: 20px;
+}
+
+input, md-input-container {
+  width: 100%;
+}

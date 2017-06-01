@@ -1,0 +1,39 @@
+<div *tdLoading="'invoice'">
+  <form *ngIf="invoice">
+    <md-card>
+      <md-card-header>Edit Invoice</md-card-header>
+      <md-card-content>
+        <md-input-container>
+          <input name="service" mdInput type="text" placeholder="Service">
+        </md-input-container>
+        <md-input-container>
+          <input mdInput [mdDatepicker]="picker" placeholder="Choose a date">
+          <button type="button" mdSuffix [mdDatepickerToggle]="picker"></button>
+        </md-input-container>
+        <md-datepicker #picker></md-datepicker>
+        <md-input-container>
+          <input name="hours" mdInput type="number" placeholder="Hours">
+        </md-input-container>
+        <md-input-container>
+          <input name="rate" mdInput type="number" placeholder="Rate">
+        </md-input-container>
+        <div>
+          <md-select name="customerId" placeholder="Customer">
+            <md-option [value]="customer.id" *ngFor="let customer of customers">{{customer?.name}}</md-option>
+          </md-select>
+        </div>
+        <div class="toggler">
+          <md-slide-toggle>Paid</md-slide-toggle>
+        </div>
+        <div class="total">
+          Total: {{total | currency:'USD':true:'.2'}}
+        </div>
+      </md-card-content>
+      <md-card-actions>
+        <button type="button" md-button>Delete</button>
+        <button type="button" md-button>Cancel</button>
+        <button type="submit" md-raised-button color="primary">Save</button>
+      </md-card-actions>
+    </md-card>
+  </form>
+</div>

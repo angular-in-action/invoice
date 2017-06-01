@@ -1,3 +1,8 @@
-<h1>
-  {{title}}
-</h1>
+<td-layout-nav toolbarTitle="Invoicing" icon="attach_money" navigationRoute="/">
+  <div td-toolbar-content layout="row" layout-align="center center" flex>
+    <span flex></span>
+    <a routerLink="/invoices" md-button class="mat-button">Invoices</a>
+    <a routerLink="/customers" md-button class="mat-button">Customers</a>
+  </div>
+  <router-outlet></router-outlet>
+</td-layout-nav>

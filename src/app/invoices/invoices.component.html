@@ -1,0 +1,11 @@
+<div *tdLoading="'invoices'">
+  <md-list>
+    <h3 md-subheader>Recent Invoices</h3>
+    <md-list-item *ngFor="let invoice of invoices" routerLink="/invoices/{{invoice.id}}">
+      <md-icon md-list-icon>folder</md-icon>
+      <h4 md-line>{{invoice.service}}</h4>
+      <p md-line> {{invoice.date | date}} </p>
+    </md-list-item>
+  </md-list>
+  <button md-fab class="mat-fab-bottom-right fixed mat-accent mat-fab" routerLink="/invoices/create"><md-icon>add</md-icon></button>
+</div>

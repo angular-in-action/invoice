@@ -15,6 +15,9 @@
     "lib": [
       "es2016",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@aia/services": ["app/services"]
+    }
   }
 }

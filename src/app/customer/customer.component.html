@@ -1,0 +1,21 @@
+<div *tdLoading="'customer'">
+  <md-list *ngIf="customer">
+    <h3 md-subheader>Customer ID: {{customer.id}}</h3>
+    <md-list-item>
+      <md-icon md-list-icon>perm_identity</md-icon>
+      <h4 md-line>{{customer.name}}</h4>
+      <p md-line>Customer</p>
+    </md-list-item>
+    <md-list-item>
+      <md-icon md-list-icon>email</md-icon>
+      <h4 md-line>{{customer.email}}</h4>
+      <p md-line>Email</p>
+    </md-list-item>
+    <md-list-item>
+      <md-icon md-list-icon>phone</md-icon>
+      <h4 md-line>{{customer.phone}}</h4>
+      <p md-line>Phone</p>
+    </md-list-item>
+  </md-list>
+  <button md-fab class="mat-fab-bottom-right fixed mat-accent mat-fab" routerLink="/customers/{{customer?.id}}/edit"><md-icon>mode_edit</md-icon></button>
+</div>
