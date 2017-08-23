@@ -1,0 +1,11 @@
+:host {
+    width: 100%;
+    display: block;
+}
+md-input-container {
+    width: 100%;
+}
+button {
+    padding: 0;
+    min-width: 25%;
+}

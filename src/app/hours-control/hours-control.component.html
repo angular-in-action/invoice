@@ -1,0 +1,13 @@
+<md-input-container>
+  <input name="hours" mdInput type="number" placeholder="Hours" [(ngModel)]="hours" hours
+    (keyup)="keypress($event)" #control="ngModel" (change)="update()">
+  <md-error *ngIf="control.touched && control.invalid">
+    Hours must be a number in increments of .25
+  </md-error>
+</md-input-container>
+<div layout="row">
+  <button type="button" md-button flex (click)="setValue(1)">+ 1</button>
+  <button type="button" md-button flex (click)="setValue(.25)">+ .25</button>
+  <button type="button" md-button flex (click)="setValue(-.25)">- .25</button>
+  <button type="button" md-button flex (click)="setValue(-1)">- 1</button>
+</div>
