@@ -1,22 +1,31 @@
 <div *tdLoading="'customer'">
-  <form *ngIf="customer">
+  <form *ngIf="customer" #form="ngForm" (ngSubmit)="save()">
     <md-card>
       <md-card-header>Edit Customer</md-card-header>
       <md-card-content>
         <md-input-container>
-          <input name="customer" mdInput placeholder="Customer Name" value="">
+          <input name="customer" mdInput placeholder="Customer Name" [(ngModel)]="customer.name" required #name="ngModel">
+          <md-error *ngIf="name.touched && name.invalid">
+            Name is required
+          </md-error>
         </md-input-container>
         <md-input-container>
-          <input name="email" mdInput type="email" placeholder="Email" value="">
+          <input name="email" mdInput type="email" placeholder="Email" [(ngModel)]="customer.email" required #email="ngModel">
+          <md-error *ngIf="email.touched && email.invalid">
+            A valid email is required
+          </md-error>
         </md-input-container>
         <md-input-container>
-          <input name="phone" mdInput type="tel" placeholder="Phone" value="">
+          <input name="phone" mdInput type="tel" placeholder="Phone" [(ngModel)]="customer.phone" required phone #phone="ngModel">
+          <md-error *ngIf="phone.touched && phone.errors?.phone">
+            Not a valid phone number
+          </md-error>
         </md-input-container>
       </md-card-content>
       <md-card-actions>
-        <button type="button" md-button>Delete</button>
-        <button type="button" md-button>Cancel</button>
-        <button type="submit" md-raised-button color="primary">Save</button>
+        <button type="button" md-button (click)="delete()" *ngIf="customer.id">Delete</button>
+        <button type="button" md-button (click)="cancel()">Cancel</button>
+        <button type="submit" md-raised-button color="primary" [disabled]="form.invalid">Save</button>
       </md-card-actions>
     </md-card>
   </form>

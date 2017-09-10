@@ -24,6 +24,7 @@ import { InvoiceComponent } from './invoice/invoice.component';
 import { CustomerComponent } from './customer/customer.component';
 import { InvoiceFormComponent } from './invoice-form/invoice-form.component';
 import { CustomerFormComponent } from './customer-form/customer-form.component';
+import { PhoneDirective } from './validators/phone.directive';
 
 export const ROUTES = [
   { path: 'invoices', component: InvoicesComponent },
@@ -46,6 +47,7 @@ export const ROUTES = [
     CustomerComponent,
     InvoiceFormComponent,
     CustomerFormComponent,
+    PhoneDirective,
   ],
   imports: [
     BrowserModule,
